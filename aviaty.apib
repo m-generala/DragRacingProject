@@ -1,0 +1,83 @@
+FORMAT: 1A
+ 
+# Drag Racing Bulgaria
+##Contenders [/contenders]
+### List all contenders [GET]
++ Response 200 (application/json)
+ 
+    + Body
+   
+            [{
+                "id": 1,
+                "location": ", Bulgaria"
+            },
+            {
+                "id": 5,
+                "location": "Madrid, Spain"
+            }]
+
+##Events [/events]
+An event has three parameters
+    - id
+    - location
+    - starting date
+    
+### Create event [POST]
++ Request (application/json)
+
+        {
+            "user": "Generala",
+            "location": "Kondofrey"
+            "start":"28.04.2015"
+        }
++ Response 201 (application/json)
+
+        {
+            "id": 1,
+            "user": "Generala",
+            "start": "28.02.2015",
+            "location": "Kondofrey"
+        } 
+        
+### Remove an event [DELETE]
++ Response 204
+ 
+## Users [/users]
+### Add an user [POST]
++ Request (application/json)
+ 
+            {
+                "name": "John",
+                "username": "johndoexx",
+                "password": "secret",
+                "email": "johndoe@email.com"
+            }
+ 
++ Response 201 (application/json)
+ 
+       
+            [{
+                "id": 1,
+                "name": "John",
+                "username": "johndoexx",
+                "password": "secret",
+                "email": "johndoe@email.com"
+            }]
+ 
+ 
+
+### Get single user info [GET]
++ Response 200 (application/json)
+ 
+    + Body
+   
+            [{
+                "id": 1,
+                "name": "John",
+                "username": "johndoexx",
+                "password": "secret",
+                "email": "johndoe@email.com"
+            }]
+ 
+### Remove an user [DELETE]
++ Response 204
